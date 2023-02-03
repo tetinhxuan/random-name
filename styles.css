@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+}
+main {
+  display: flex;
+}
+/* For the left side and cards */
+
+.left {
+  width: 40%;
+  height: 100vh;
+  position: relative;
+  color: hsl(0, 0%, 100%);
+}
+
+#img-des {
+  width: 100%;
+  height: 100%;
+}
+.card-front {
+  width: 445px;
+  background-image: url(images/bg-card-front.png);
+  aspect-ratio: 2;
+  border-radius: 10px;
+  position: absolute;
+  right: -100px;
+  bottom: 50%;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.card-front-main {
+  padding: 20px 30px;
+}
+.card-front-logo img {
+  width: 20%;
+}
+.card-front-number {
+  font-size: 1.95rem;
+  letter-spacing: 2px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+.card-front-bot {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.card-back {
+  width: 445px;
+  background-image: url(images/bg-card-back.png);
+  aspect-ratio: 2;
+  border-radius: 10px;
+  position: absolute;
+  right: -170px;
+  bottom: 20%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+#card-back-cvc {
+  color: hsl(0, 0%, 100%);
+  position: absolute;
+  top: 110px;
+  right: 50px;
+}
+
+/* For the form in right side  */
+
+.right {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+form {
+  width: max(45%, 250px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  letter-spacing: 1px;
+}
+
+input {
+  padding-block: 0.7rem;
+  padding-left: 0.5rem;
+  border-radius: 5px;
+  border: solid 1px hsl(270, 3%, 87%);
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+}
+
+#name,
+#number {
+  width: calc(100% - 0.5rem - 2px);
+  margin-top: 0.5rem;
+}
+.card-infor {
+  display: flex;
+  justify-content: space-between;
+}
+label {
+  display: block;
+  text-transform: uppercase;
+}
+.card-date input {
+  width: 40%;
+}
+.card-cvc input {
+  width: calc(100% - 2px - 0.5rem);
+}
+button {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 5px;
+  padding-block: 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 900px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    margin: 0 auto;
+  }
+  .left {
+    width: 100%;
+
+    height: 200px;
+  }
+  .right {
+    width: 100%;
+    padding-top: 100px;
+  }
+  .card-back {
+    right: 20px;
+    resize: both;
+    background-size: 275px;
+    width: 275px;
+    bottom: 40px;
+    z-index: 9;
+  }
+  #card-back-cvc {
+    top: 66px;
+    right: 35px;
+    font-size: 0.8rem;
+  }
+  .card-front {
+    left: 20px;
+    background-size: 275px;
+    width: 275px;
+    z-index: 10;
+    bottom: -50px;
+  }
+  .card-front-main {
+    padding: 10px 20px;
+  }
+  .card-front-number {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+  .card-front-bot {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+  }
+  .card-front-bot-name {
+    font-size: 0.8rem;
+  }
+  span {
+    font-size: 0.8rem;
+  }
+  form {
+    width: max(85%, 250px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .success {
+    width: 100%;
+  }
+}
+/* SUCCESS PAGE  */
+.success {
+  width: max(45%, 300px);
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 2rem;
+  letter-spacing: 1px;
+  display: none;
+}
+p,
+h1 {
+  text-align: center;
+  color: hsl(279, 6%, 55%);
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: hsl(278, 68%, 11%);
+}
+.success img {
+  width: 3rem;
+  display: flex;
+  align-self: center;
+}
+.hide {
+  display: none;
+  transition: 0.5s;
+}
+.unHide {
+  display: flex;
+  transition: 0.5s;
+}
+/* Wrong font  */
+.wrongborder {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+.wrongMess {
+  gap: 0;
+  position: relative;
+}
+.wrongMess::after {
+  content: "Can't be blank!";
+  font-size: 0.8rem;
+  color: hsl(0, 100%, 66%);
+  width: 30rem;
+  height: 2rem;
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  z-index: 10;
+}
+.notNumber {
+  gap: 0;
+  position: relative;
+}
+.notNumber::after {
+  content: "Wrong format, number only!";
+  font-size: 0.8rem;
+  color: hsl(0, 100%, 66%);
+  width: 30rem;
+  height: 2rem;
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  z-index: 10;
+}
